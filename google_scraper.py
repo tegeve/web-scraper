@@ -94,9 +94,19 @@ class CautareGoogle:
         return self.current_url_list
 
     def __str__(self):
-        dictionar = {'locatie': self.rezultate, 'url': self.current_url_list, 'adresa': self.address_list,
-                     'nota review': self.review_list, 'number reviews': self.number_reviews_list}
-        self.df = pd.DataFrame(dictionar, columns=('locatie', 'url', 'adresa', 'nota review', 'number reviews'))
+        dictionar = {'locatie': self.rezultate,
+                     'url': self.current_url_list,
+                     'adresa': self.address_list,
+                     'nota review': self.review_list,
+                     'number reviews': self.number_reviews_list
+                     }
+        self.df = pd.DataFrame(dictionar, columns=(
+            'locatie',
+            'url',
+            'adresa',
+            'nota review',
+            'number reviews'
+        ))
         pd.set_option('display.max_columns', None)
         pd.set_option('display.expand_frame_repr', False)
         pd.set_option('max_colwidth', None)
